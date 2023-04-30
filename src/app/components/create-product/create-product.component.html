@@ -1,0 +1,6 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <input appFocus type="text" class="border w-full py-2 px-4 mb-2" placeholder="Product name" formControlName="title">
+  <p class="text-red-600 font-medium mb-2" *ngIf="title.errors?.minlength && title.touched">Fill more 6 characters in input. Now {{title.value.length}}</p>
+  <p class="text-red-600 font-medium mb-2" *ngIf="title.errors?.required && title.touched">Input is required</p>
+  <button type="submit" class="py-2 px-4 bg-blue-600 text-white content-between" >Create</button>
+</form>
